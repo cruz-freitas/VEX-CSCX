@@ -70,6 +70,7 @@ var clients=NAMES.map(function(name,i){
   act.forEach(function(c){acc+=c.mrr;var r=acc/tot;c.curva=r<=.5?"A":r<=.8?"B":r<=.95?"C":"D"});
   clients.forEach(function(c){if(!c.curva)c.curva="D"});
 })();
+function months(d){return Math.max(0,Math.round((TODAY-d)/(30.4*864e5)))}
 function trend(c){return c.hist[11]-c.hist[8]}
 function byId(id){for(var i=0;i<clients.length;i++)if(clients[i].id===id)return clients[i]}
 
